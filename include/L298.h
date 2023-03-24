@@ -1,6 +1,7 @@
 #ifndef L298
 #define L298
 
+#include <stdint.h>
 #include <Arduino.h>
 
 class L298N{
@@ -13,8 +14,8 @@ class L298N{
     unsigned short ENB;
 
   public:
-    L298N(unsigned short, unsigned short, unsigned short, unsigned short, unsigned short, unsigned short);
-    void power(unsigned);
+    L298N(uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t);
+    void power(uint8_t);
     void forward();
     void back();
     void left();

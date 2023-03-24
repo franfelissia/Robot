@@ -1,6 +1,11 @@
+/*
+  Esta librería permite utilizar el chip L298N para controlar dos motores de corriente continua
+  para el manejo del robot.
+*/
+
 #include "L298.h"
 
-L298N::L298N(unsigned short _IN1, unsigned short _IN2, unsigned short _IN3, unsigned short _IN4, unsigned short _ENA, unsigned short _ENB){
+L298N::L298N(uint8_t _IN1, uint8_t _IN2, uint8_t _IN3, uint8_t _IN4, uint8_t _ENA, uint8_t _ENB){
   IN1 = _IN1;
   IN2 = _IN2;
   IN3 = _IN3;
@@ -15,7 +20,15 @@ L298N::L298N(unsigned short _IN1, unsigned short _IN2, unsigned short _IN3, unsi
   pinMode(ENB, OUTPUT);
 }
 
-void L298N::power(unsigned vel){
+void L298N::power(uint8_t vel){
+  /*
+    Con este método aplico una señal de pwm soble los pines de habilitación de los motores.
+    Ésto permite encender y apagar los motores teniendo un control sobre la velocidad que alcanzan.
+    
+    Podria mejorarce conciderando cada motor por separado y con sensores opticos para poder ir
+    ajustando el valor del pwm.
+  */
+  
   analogWrite(ENA, vel);
   analogWrite(ENB, vel);
 }

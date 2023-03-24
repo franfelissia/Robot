@@ -1,6 +1,15 @@
+/*
+  Esta libreria está hecha para controlar el módulo HC-SR04 para poder
+  implementarlo en un robot.
+*/
+
 #include "HC-SR04.h"
 
-HCSR::HCSR(unsigned short _trig, unsigned short _echo){ 
+HCSR::HCSR(uint8_t _trig, uint8_t _echo){ 
+  /*
+    Acá declaro en que entradas estan conectados los pines del módulo y
+    les doy un valor de inicio.
+  */
   trig = _trig;
   echo = _echo;
   pinMode(trig, OUTPUT);
@@ -8,8 +17,13 @@ HCSR::HCSR(unsigned short _trig, unsigned short _echo){
   digitalWrite(trig, 0);
 }
 
-long HCSR::read(){
-  long dist, dur;
+uint8_t HCSR::read(){
+  /*
+    Con este metodo mando la señal por el pin de trig que empiece la medición,
+    resivo el dato por el pin de echo, lo convierto a centimetros y lo devuelvo.
+  */
+  long dur;
+  uint8_t dist;
   
   digitalWrite(trig, 1);
   delayMicroseconds(10);
