@@ -16,7 +16,7 @@ Este es un pequeño proyecto qur hice de un robot evasor de objetos que hice par
 11. Dos motores con ruedas
 12. Una base sobre la que poder montar todo
 
-## Esquema de conecciones
+## Esquema de conexiones
 
 El mismo se encuentra en la carpeta **schematic** en conjunto con el proyecto de Fritzing por si lo necesitas
 
