@@ -4,7 +4,7 @@
   y dos librerias propias.
   
   La inención es hacer una practica para el curso de Fundamentos del desarrollo de Hardware
-  de platzi.com.
+  de platzi.com y también practicar el uso de git y github.
   
   Éste proyecto fue hecho por Francisco Felissia (francsicofelissia@gmail.com).
   Se distribulle bajo la licencia GPLv.3 y se puede obtener desde
